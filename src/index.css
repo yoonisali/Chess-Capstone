@@ -5,9 +5,18 @@
 }
 
 
-.chessboard {
+#chessboard {
+  display: flex;
+  flex-wrap: wrap;
   background-color: #779556;
-  width: 650px;
-  height: 600px;
+  width: 800px;
+  height: 800px;
 }
+
+#chessboard .tile {
+  width: 100px;
+  height: 100px;
+}
+
+
 
