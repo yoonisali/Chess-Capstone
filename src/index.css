@@ -3,13 +3,15 @@
   place-content: center;
   height: 100vh;
 }
+/* ----------------------------------------- */
 
+/*ChessBoard Styling*/
 
 #chessboard {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(8, 100px);
   grid-template-rows: repeat(8, 100px);
-  background-color: #779556;
+
   width: 800px;
   height: 800px;
 }
@@ -19,5 +21,10 @@
   height: 100px;
 }
 
+#chessboard .white-tile {
+  background-color: white;
+}
 
-
+#chessboard .green-tile {
+  background-color: #779556;
+}
