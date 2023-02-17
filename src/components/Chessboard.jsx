@@ -2,7 +2,7 @@ import React from "react";
 
 function Chessboard() {
   return (
-    <div>I am the chessboard lol</div>
+    <div className="chessboard"></div>
   )
 }
 
