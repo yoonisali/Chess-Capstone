@@ -6,7 +6,13 @@ const horizontalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
 const pieces = [];
 
-pieces.push({ image: "./assets/img/bPawn.png", x: 0, y: 6 });
+for (let i = 0; i < 8; i++){
+  pieces.push({ image: "./assets/img/bPawn.png", x: i, y: 6 });
+}
+
+for (let i = 0; i < 8; i++){
+  pieces.push({ image: "./assets/img/wPawn.png", x: i, y: 1 });
+}
 
 function Chessboard() {
   let board = [];
