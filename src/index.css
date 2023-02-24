@@ -17,15 +17,15 @@
   border: 5px solid black;
 }
 
-#chessboard .tile {
+.tile {
   width: 100px;
   height: 100px;
 }
 
-#chessboard .white-tile {
+.white-tile {
   background-color: white;
 }
 
-#chessboard .green-tile {
+.green-tile {
   background-color: #779556;
 }
