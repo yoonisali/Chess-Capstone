@@ -6,13 +6,64 @@ const horizontalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
 const pieces = [];
 
+
+//// WHITE PIECES-------------------------------------------------------
+
+// White Pawns
+for (let i = 0; i < 8; i++){
+  pieces.push({ image: "./assets/img/wPawn.png", x: i, y: 1 });
+}
+
+// White Rooks
+pieces.push({ image: "./assets/img/wRook.png", x: 7, y: 0});
+pieces.push({ image: "./assets/img/wRook.png", x: 0, y: 0});
+
+
+// White Knights
+pieces.push({ image: "./assets/img/wKnight.png", x: 6, y: 0});
+pieces.push({ image: "./assets/img/wKnight.png", x: 1, y: 0});
+
+// White Bishops
+pieces.push({ image: "./assets/img/wBishop.png", x: 5, y: 0});
+pieces.push({ image: "./assets/img/wBishop.png", x: 2, y: 0});
+
+// White King
+pieces.push({ image: "./assets/img/wKing.png", x: 4, y: 0});
+
+// White Queen 
+pieces.push({ image: "./assets/img/wQueen.png", x: 3, y: 0});
+
+
+
+//// BLACK PIECES-------------------------------------------------------
+
+// Black Pawns
 for (let i = 0; i < 8; i++){
   pieces.push({ image: "./assets/img/bPawn.png", x: i, y: 6 });
 }
 
-for (let i = 0; i < 8; i++){
-  pieces.push({ image: "./assets/img/wPawn.png", x: i, y: 1 });
-}
+// Black Rooks
+pieces.push({ image: "./assets/img/bRook.png", x: 0, y: 7});
+pieces.push({ image: "./assets/img/bRook.png", x: 7, y: 7});
+
+// Black Knights
+pieces.push({ image: "./assets/img/bKnight.png", x: 6, y: 7});
+pieces.push({ image: "./assets/img/bKnight.png", x: 1, y: 7});
+
+// Black Bishops
+pieces.push({ image: "./assets/img/bBishop.png", x: 5, y: 7});
+pieces.push({ image: "./assets/img/bBishop.png", x: 2, y: 7});
+
+// Black King
+pieces.push({ image: "./assets/img/bKing.png", x: 4, y: 7});
+
+// Black Queen 
+pieces.push({ image: "./assets/img/bQueen.png", x: 3, y: 7});
+
+
+
+
+
 
 function Chessboard() {
   let board = [];
