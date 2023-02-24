@@ -14,6 +14,7 @@
   background-color: #779556;
   width: 800px;
   height: 800px;
+  border: 5px solid black;
 }
 
 #chessboard .tile {
