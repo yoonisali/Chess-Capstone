@@ -17,7 +17,7 @@
 
 * _clone the repository to your desktop:_
 ```
-git clone https://github.com/yoonisali/survey-creator-firebase.git
+git clone https://github.com/yoonisali/Chess-Capstone.git
 ```
 * _Enter the following commands in your terminal_
 ```
