@@ -23,18 +23,18 @@ function Account() {
   return (
     <div id="login-form">
       <div id="login-box">
-      <img className="login-logo" src="../../src/assets/img/logo.png"/>
+      <img className="login-logo" src="./assets/img/logo.png"/>
         <h1>Sign up</h1>
         {signUpSuccess}
         <form onSubmit={doSignUp}>
           <input
             type='text'
             name='email'
-            placeholder='Email Address' />
+            placeholder='Email Address' /><br/><br/>
           <input
             type='password'
             name='password'
-            placeholder='Password' />
+            placeholder='Password' /><br/><br/>
           <button type='submit'>Sign up</button>
         </form>
       </div>

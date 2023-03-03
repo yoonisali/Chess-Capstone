@@ -3,8 +3,8 @@ import Account from "./Authentication/Account";
 function App() {
   return (
     <div id='app'>
-      {/* <Chessboard /> */}
-      <Account />
+      <Chessboard />
+      {/* <Account /> */}
     </div>
   );
 }

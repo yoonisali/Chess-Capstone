@@ -1,3 +1,7 @@
+html {
+  background-color: #503622
+}
+
 #app {
   display: grid;
   place-content: center;
@@ -14,7 +18,7 @@
   background-color: #779556;
   width: 800px;
   height: 800px;
-  border: 5px solid black;
+  border: 5px solid whitesmoke;
 }
 
 .tile {
@@ -77,8 +81,13 @@
   margin-top: 20px;
   color: black;
   font-weight: bold;
+  background-color: whitesmoke;
 }
 
+#login-box input {
+  text-align: center;
+}
+ 
 .login-logo {
   width: 70px;
   height: 70px;
