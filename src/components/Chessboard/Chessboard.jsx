@@ -62,9 +62,6 @@ pieces.push({ image: "./assets/img/bQueen.png", x: 3, y: 7});
 
 
 
-
-
-
 function Chessboard() {
   let board = [];
 
