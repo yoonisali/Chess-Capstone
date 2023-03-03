@@ -60,18 +60,33 @@ pieces.push({ image: "./assets/img/bKing.png", x: 4, y: 7});
 // Black Queen 
 pieces.push({ image: "./assets/img/bQueen.png", x: 3, y: 7});
 
+
+let activePiece = null;
+
 function grabPiece(e) {
   const element = e.target;
   if(element.classList.contains("chess-piece")) {
     console.log(e.target);
   }
-
   const x = e.clientX - 50;
   const y = e.clientY - 50;
   element.style.position = "absolute";
   element.style.left = `${x}px`;
-  element.style.right = `${y}px`;
+  element.style.top = `${y}px`;
+
+  activePiece = element;
   
+}
+
+function movePiece(e) {
+  if(activePiece) {
+    console.log(e.target);
+  }
+  const x = e.clientX - 50;
+  const y = e.clientY - 50;
+  activePiece.style.position = "absolute";
+  activePiece.style.left = `${x}px`;
+  activePiece.style.top = `${y}px`;
 }
 
 function Chessboard() {
@@ -95,7 +110,7 @@ function Chessboard() {
     }
   }
 
-  return <div onMouseDown={grabPiece} id="chessboard">{board}</div>;
+  return <div onMouseMove={movePiece} onMouseDown={grabPiece} id="chessboard">{board}</div>;
 }
 
 export default Chessboard;
