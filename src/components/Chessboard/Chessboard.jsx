@@ -60,7 +60,13 @@ pieces.push({ image: "./assets/img/bKing.png", x: 4, y: 7});
 // Black Queen 
 pieces.push({ image: "./assets/img/bQueen.png", x: 3, y: 7});
 
+function grabPiece(e) {
+  const element = e.target;
+  if(element.classList.contains("chess-piece")) {
+    console.log(e.target);
+  }
 
+}
 
 function Chessboard() {
   let board = [];
@@ -83,7 +89,7 @@ function Chessboard() {
     }
   }
 
-  return <div id="chessboard">{board}</div>;
+  return <div onMouseDown={grabPiece} id="chessboard">{board}</div>;
 }
 
 export default Chessboard;

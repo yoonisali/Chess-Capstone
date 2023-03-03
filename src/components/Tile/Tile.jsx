@@ -5,6 +5,7 @@ function Tile(props) {
   const styling = {
     backgroundImage: `url(${props.image})`
   }
+  
   if (props.number % 2 === 0) {
     return (
       <div className="tile brown-tile">
