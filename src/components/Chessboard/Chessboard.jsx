@@ -78,7 +78,8 @@ function Chessboard() {
 
       board.push(<Tile 
         number={number} 
-        image={image} />);
+        image={image} 
+        key={`${j}, ${i}`} />);
     }
   }
 
