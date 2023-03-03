@@ -89,6 +89,8 @@ function Chessboard() {
     }
     const minX = chessboardRef.current.offsetLeft - 20;
     const minY = chessboardRef.current.offsetTop - 20;
+    const maxX = chessboardRef.current.offsetLeft + chessboardRef.current.clientWidth - 70;
+    const maxY = chessboardRef.current.offsetTop + chessboardRef.current.clientHeight - 70;
     const x = e.clientX - 50;
     const y = e.clientY - 50;
     activePiece.style.position = "absolute";
@@ -97,12 +99,16 @@ function Chessboard() {
 
     if(x < minX) {
       activePiece.style.left = `${minX}px`;
+    } else if(x > maxX) {
+      activePiece.style.left = `${maxX}px`;
     } else {
       activePiece.style.left = `${x}px`;
     }
-
+ 
     if(y < minY) {
       activePiece.style.top = `${minY}px`;
+    } else if(y > maxY) {
+      activePiece.style.top = `${maxY}px`;
     } else {
       activePiece.style.top = `${y}px`;
     }
