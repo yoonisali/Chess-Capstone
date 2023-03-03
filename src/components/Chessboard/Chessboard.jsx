@@ -66,6 +66,12 @@ function grabPiece(e) {
     console.log(e.target);
   }
 
+  const x = e.clientX - 50;
+  const y = e.clientY - 50;
+  element.style.position = "absolute";
+  element.style.left = `${x}px`;
+  element.style.right = `${y}px`;
+  
 }
 
 function Chessboard() {
