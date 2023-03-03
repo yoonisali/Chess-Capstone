@@ -28,10 +28,26 @@
   width: 70px;
 }
 
-.white-tile {
-  background-color: white;
+.brown-tile {
+  background-color: #C49F82;
 }
 
-.green-tile {
-  background-color: #779556;
+.cream-tile {
+  background-color: #F3E1C2;
+}
+
+.tile .chess-piece {
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: 80px;
+  background-position: center;
+}
+
+.tile .chess-piece:hover {
+  cursor: grab;
+}
+
+.tile .chess-piece:active {
+  cursor: grabbing;
 }
