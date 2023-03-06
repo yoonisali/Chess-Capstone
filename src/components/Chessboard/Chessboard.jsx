@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Tile from "../Tile/Tile";
 
 const verticalAxis = ["1", "2", "3", "4", "5", "6", "7", "8"];
@@ -70,6 +70,7 @@ function Chessboard() {
   let activePiece = null;
 
   function grabPiece(e) {
+    const [pieces, setPieces] = useState()
     const element = e.target;
     if (element.classList.contains("chess-piece")) {
       console.log(e.target);
