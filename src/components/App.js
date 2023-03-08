@@ -1,4 +1,4 @@
-import Chessboard from "./Chessboard/Chessboard";
+import { Chessboard } from "./Chessboard/Chessboard";
 import Account from "./Authentication/Account";
 
 function App() {
