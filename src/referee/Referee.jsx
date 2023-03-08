@@ -1,8 +1,14 @@
 import React from "react";
-import { PieceType } from "../components/Chessboard/Chessboard";
-import { TeamType } from "../components/Chessboard/Chessboard";
+import { PieceType, TeamType } from "../components/Chessboard/Chessboard";
+
 
 export default class Referee {
+
+  tileIsOccupied(x, y, boardState) {
+
+  }
+
+
   isValidMove(px, py, x, y, type, team) {
     console.log(`Previous Location: (${px}, ${py})`)
     console.log(`Current Location: (${x}, ${y})`)
@@ -18,6 +24,16 @@ export default class Referee {
       
       } else {
         if(px === x && y - py === 1) {
+          return true;
+        }
+      }
+    } else {
+      if (py === 6) {
+        if (px === x && (y - py === -1 || y - py === -2)) {
+          return true;
+        }
+      } else {
+        if(px === x && y - py === -1) {
           return true;
         }
       }
