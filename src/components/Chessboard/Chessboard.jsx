@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import Tile from "../Tile/Tile";
 import Referee from "../../referee/Referee";
+import { type } from "@testing-library/user-event/dist/type";
 
 const verticalAxis = ["1", "2", "3", "4", "5", "6", "7", "8"];
 const horizontalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -14,61 +15,78 @@ const PieceType = {
   KING: 5
 } 
 
+const TeamType = {
+  OPPONENT: 0,
+  OUR: 1
+}
+
+
 const initialBoardState = [];
+
+for(let p = 0; p < 2; p++) {
+  const teamType = (p === 0) ? TeamType.OPPONENT : TeamType.OUR;
+  const type = (teamType === TeamType.OPPONENT) ? "b" : "w";
+  const y = (teamType === TeamType.OPPONENT) ? 7 : 0; 
+
 
 //// WHITE PIECES-------------------------------------------------------
 
 // White Pawns
 for (let i = 0; i < 8; i++) {
-  initialBoardState.push({ image: "./assets/img/wPawn.png", x: i, y: 1, type: PieceType.PAWN});
+  initialBoardState.push({ image: "./assets/img/wPawn.png", x: i, y: 1, type: PieceType.PAWN, team: TeamType.OUR});
 }
-
-// White Rooks
-initialBoardState.push({ image: "./assets/img/wRook.png", x: 7, y: 0, type: PieceType.ROOK});
-initialBoardState.push({ image: "./assets/img/wRook.png", x: 0, y: 0, type: PieceType.ROOK });
-
-
-// White Knights
-initialBoardState.push({ image: "./assets/img/wKnight.png", x: 6, y: 0, type: PieceType.KNIGHT});
-initialBoardState.push({ image: "./assets/img/wKnight.png", x: 1, y: 0, type: PieceType.KNIGHT });
-
-// White Bishops
-initialBoardState.push({ image: "./assets/img/wBishop.png", x: 5, y: 0, type: PieceType.BISHOP });
-initialBoardState.push({ image: "./assets/img/wBishop.png", x: 2, y: 0, type: PieceType.BISHOP });
-
-// White King
-initialBoardState.push({ image: "./assets/img/wKing.png", x: 4, y: 0, type: PieceType.KING });
-
-// White Queen 
-initialBoardState.push({ image: "./assets/img/wQueen.png", x: 3, y: 0, type: PieceType.QUEEN});
-
-
-
-//// BLACK PIECES-------------------------------------------------------
 
 // Black Pawns
 for (let i = 0; i < 8; i++) {
-  initialBoardState.push({ image: "./assets/img/bPawn.png", x: i, y: 6, type: PieceType.PAWN});
+  initialBoardState.push({ image: "./assets/img/bPawn.png", x: i, y: 6, type: PieceType.PAWN, team: TeamType.OPPONENT});
 }
+ 
+// White Rooks
+initialBoardState.push({ image: `./assets/img/${type}Rook.png`, x: 7, y, type: PieceType.ROOK, team: teamType});
+initialBoardState.push({ image: `./assets/img/${type}Rook.png`, x: 0, y, type: PieceType.ROOK, team: teamType});
 
-// Black Rooks
-initialBoardState.push({ image: "./assets/img/bRook.png", x: 0, y: 7, type: PieceType.ROOK });
-initialBoardState.push({ image: "./assets/img/bRook.png", x: 7, y: 7, type: PieceType.ROOK});
 
-// Black Knights
-initialBoardState.push({ image: "./assets/img/bKnight.png", x: 6, y: 7, type: PieceType.KNIGHT});
-initialBoardState.push({ image: "./assets/img/bKnight.png", x: 1, y: 7, type: PieceType.KNIGHT });
+// White Knights
+initialBoardState.push({ image: `./assets/img/${type}Knight.png`, x: 6, y, type: PieceType.KNIGHT, team: teamType});
+initialBoardState.push({ image: `./assets/img/${type}Knight.png`, x: 1, y, type: PieceType.KNIGHT, team: teamType});
 
-// Black Bishops
-initialBoardState.push({ image: "./assets/img/bBishop.png", x: 5, y: 7, type: PieceType.BISHOP });
-initialBoardState.push({ image: "./assets/img/bBishop.png", x: 2, y: 7, type: PieceType.BISHOP });
+// White Bishops
+initialBoardState.push({ image: `./assets/img/${type}Bishop.png`, x: 5, y, type: PieceType.BISHOP, team: teamType });
+initialBoardState.push({ image: `./assets/img/${type}Bishop.png`, x: 2, y, type: PieceType.BISHOP, team: teamType });
 
-// Black King
-initialBoardState.push({ image: "./assets/img/bKing.png", x: 4, y: 7, type: PieceType.KING });
+// White King
+initialBoardState.push({ image: `./assets/img/${type}King.png`, x: 4, y, type: PieceType.KING, team: teamType});
 
-// Black Queen 
-initialBoardState.push({ image: "./assets/img/bQueen.png", x: 3, y: 7, type: PieceType.QUEEN });
+// White Queen 
+initialBoardState.push({ image: `./assets/img/${type}Queen.png`, x: 3, y, type: PieceType.QUEEN, team: teamType});
 
+
+
+// //// BLACK PIECES-------------------------------------------------------
+
+// // Black Pawns
+// for (let i = 0; i < 8; i++) {
+//   initialBoardState.push({ image: `./assets/img/${type}Pawn.png`, x: i, y, type: PieceType.PAWN});
+// }
+
+// // Black Rooks
+// initialBoardState.push({ image: `./assets/img/${type}Rook.png`, x: 0, y, type: PieceType.ROOK});
+// initialBoardState.push({ image: `./assets/img/${type}Rook.png`, x: 7, y, type: PieceType.ROOK});
+
+// // Black Knights
+// initialBoardState.push({ image: `./assets/img/${type}Knight.png`, x: 6, y, type: PieceType.KNIGHT});
+// initialBoardState.push({ image: `./assets/img/${type}Knight.png`, x: 1, y, type: PieceType.KNIGHT});
+
+// // Black Bishops
+// initialBoardState.push({ image: `./assets/img/${type}Bishop.png`, x: 5, y, type: PieceType.BISHOP});
+// initialBoardState.push({ image: `./assets/img/${type}Bishop.png`, x: 2, y, type: PieceType.BISHOP});
+
+// // Black King
+// initialBoardState.push({ image: `./assets/img/${type}King.png`, x: 4, y, type: PieceType.KING, team: teamType});
+
+// // Black Queen 
+// initialBoardState.push({ image: `./assets/img/${type}Queen.png`, x: 3, y, type: PieceType.QUEEN, team: teamType});
+}
 
 
 function Chessboard() {
@@ -136,7 +154,7 @@ function Chessboard() {
       setPieces((value) => {
         const pieces = value.map((p) => {
           if (p.x === gridX && p.y === gridY) {
-            referee.isValidMove(gridX, gridY, x, y, p.type)
+            referee.isValidMove(gridX, gridY, x, y, p.type, p.team)
             p.x = x;
             p.y = y
           }
@@ -182,4 +200,4 @@ function Chessboard() {
   )
 }
 
-export { Chessboard, PieceType };
+export { Chessboard, PieceType, TeamType };
