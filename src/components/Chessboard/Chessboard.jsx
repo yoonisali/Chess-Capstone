@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import Tile from "../Tile/Tile";
 import Referee from "../../referee/Referee";
-import { type } from "@testing-library/user-event/dist/type";
+
 
 const verticalAxis = ["1", "2", "3", "4", "5", "6", "7", "8"];
 const horizontalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -154,9 +154,15 @@ function Chessboard() {
       setPieces((value) => {
         const pieces = value.map((p) => {
           if (p.x === gridX && p.y === gridY) {
-            referee.isValidMove(gridX, gridY, x, y, p.type, p.team)
-            p.x = x;
-            p.y = y
+            const validMove = referee.isValidMove(gridX, gridY, x, y, p.type, p.team)
+            if (validMove) {
+              p.x = x;
+              p.y = y;
+            } else {
+              activePiece.style.position = 'relative';
+              activePiece.style.removeProperty('top');
+              activePiece.style.removeProperty('left');
+            }
           }
           return p;
         })
