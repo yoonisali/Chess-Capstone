@@ -8,7 +8,6 @@ export default class Referee {
   //   return true;
   // }
 
-
   isValidMove(px, py, x, y, type, team, boardState) {
     console.log(`Previous Location: (${px}, ${py})`)
     console.log(`Current Location: (${x}, ${y})`)

@@ -4,7 +4,7 @@ import Account from "./Authentication/Account";
 function App() {
   return (
     <div id='app'>
-      <Chessboard />
+      <Chessboard /> 
       {/* <Account /> */}
     </div>
   );
