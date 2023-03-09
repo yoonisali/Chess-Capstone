@@ -4,9 +4,9 @@ import { PieceType, TeamType } from "../components/Chessboard/Chessboard";
 
 export default class Referee {
 
-  tileIsOccupied(x, y, boardState) {
-    return true;
-  }
+  // tileIsOccupied(x, y, boardState) {
+  //   return true;
+  // }
 
 
   isValidMove(px, py, x, y, type, team, boardState) {
@@ -19,13 +19,17 @@ export default class Referee {
       if (team === TeamType.OUR) {
         if (py === 1) {
         if (px === x && (y - py === 1 || y - py === 2)) {
-          if(!this.tileIsOccupied(x, y, boardState)) {
-            return true;
-          }
+          // if(!this.tileIsOccupied(x, y, boardState)) {
+          //   return true;
+          // }
+          return true;
         } 
       
       } else {
         if(px === x && y - py === 1) {
+          // if(!this.tileIsOccupied(x, y, boardState)) {
+          //   return true;
+          // }
           return true;
         }
       }
